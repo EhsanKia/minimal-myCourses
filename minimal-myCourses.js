@@ -23,6 +23,7 @@ var navTitle = document.getElementsByClassName("d_nb_mt")[0];
 var navBG = document.getElementsByClassName("d_nb_c1")[0];
 
 if (navTitle && navBG){
-	navTitle.style.paddingTop = "4px";
-	navBG.style.backgroundPositionY = "-11px";
+	navTitle.style.paddingTop = "10px";
+	navTitle.style.paddingBottom = "10px";
+	navBG.style.backgroundPositionY = "-20px";
 }
