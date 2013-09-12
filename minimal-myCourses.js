@@ -3,7 +3,7 @@
 // @namespace   Minimal myCourses
 // @description	Changes the preview pane split in myCourse from horizontal to vertical
 // @include     https://mycourses2.mcgill.ca/*
-// @version     1.4
+// @version     1.5
 // ==/UserScript==
 
 
@@ -17,13 +17,18 @@ if (locpath == panepath){
 	document.body.setAttribute("cols","50%,50%");
 }
 
+if (typeof(d_content) != "undefined") d_content.classList.remove('d2l-max-width');
+    
+headerLogo = document.getElementsByClassName('d_nb_cGlobal');
+if (headerLogo.length) headerLogo[0].style.backgroundPosition = "0% 50%";
 
-// Header padding
-var navTitle = document.getElementsByClassName("d_nb_mt")[0];
-var navBG = document.getElementsByClassName("d_nb_c1")[0];
-
-if (navTitle && navBG){
-	navTitle.style.paddingTop = "10px";
-	navTitle.style.paddingBottom = "10px";
-	navBG.style.backgroundPositionY = "-20px";
+headerFull = document.getElementsByClassName('d_nb_cFull');
+if (headerFull.length){
+    headerFull[0].style.backgroundPosition = "0% 50%";
+    headerFull[0].style.borderBottomColor = "#aaa";
 }
+
+headerHeight = document.getElementsByClassName('d_nb_i');
+if (headerHeight.length) headerHeight[0].style.minHeight = "30px";
+
+if (typeof(ctl_2) != "undefined") ctl_2.style.height = (window.innerHeight-72)+"px";
