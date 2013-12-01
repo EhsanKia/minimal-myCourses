@@ -3,9 +3,8 @@
 // @namespace   Minimal myCourses
 // @description	Changes the preview pane split in myCourse from horizontal to vertical
 // @include     https://mycourses2.mcgill.ca/*
-// @version     1.6
+// @version     1.7
 // ==/UserScript==
-
 
 // Vertical split
 var locpath     = window.location.pathname;
@@ -41,3 +40,9 @@ item = document.getElementsByClassName('d_nb_i');
 if (item.length) item[0].style.minHeight = "30px";
 
 if (typeof(ctl_2) != "undefined") ctl_2.style.height = (window.innerHeight-72)+"px";
+
+console.log(window.location);
+
+setInterval(function(){
+    try{ D2L.PT.Auth.SessionTimeout.Renew(); } catch(e){}
+}, 1000 * 60 * 5);
