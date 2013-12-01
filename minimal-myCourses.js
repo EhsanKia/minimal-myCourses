@@ -41,8 +41,6 @@ if (item.length) item[0].style.minHeight = "30px";
 
 if (typeof(ctl_2) != "undefined") ctl_2.style.height = (window.innerHeight-72)+"px";
 
-console.log(window.location);
-
 setInterval(function(){
     try{ D2L.PT.Auth.SessionTimeout.Renew(); } catch(e){}
 }, 1000 * 60 * 5);
